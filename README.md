@@ -5,14 +5,13 @@ Sabemos que a nossa vida como aluno FAP é uma eterna correria só, e para que v
 
 ## Tecnologias Utilizadas: 
 </div>
-
-<div align="middle">
   
-<img align="middle" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="60" height="60" /> 
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="60" height="60" /> 
 
 </div>
 
 ## Colaboradores:
 * Barbara
-* Daniela Xavier;
+* Daniela Xavier ---> 
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-000?style=for-the-badge&logo=linkedin&logoColor=0E76A8)](https://www.linkedin.com/in/dani-xavier/)
 * Erica
