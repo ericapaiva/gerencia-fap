@@ -11,6 +11,7 @@ const clear = require("clear");
 
 const atividade = [atividade1, atividade2];
 let loop = true;
+let busca; // alteração para deletar depois
 
 //PR - 02: Criar método para crud: listar todas as atividades
 //PR - 03: Criar método para crud: cadastrar todas as atividades
