@@ -19,6 +19,8 @@ let loop = true;
 //PR - 06: Criar método para crud: remover atividades
 
 while (true) {
+  console.log("minha branch 07");
+  
   //PR - 07: Criar menu com as opções descritas acima e estrutura do switch de acordo com o menu
 }
 
