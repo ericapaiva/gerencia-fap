@@ -41,8 +41,23 @@ let busca; // alteração para deletar depois
 //PR - 05: Criar método para crud: alterar atividades
 //PR - 06: Criar método para crud: remover atividades
 
+<<<<<<< HEAD
 //while (true) {
-console.log("minha branch 07");
+=======
+//PR - 07: Criar menu com as opções descritas acima e estrutura do switch de acordo com o menu
+while (true) {
+  console.log("=== GERENCIADOR DE TAREFAS ===");
+  console.log("=========MENU========");
+  console.log("0 - Sair do sistema");
+  console.log("1 - Listar todas as atividades");
+  console.log("2 - Cadastrar uma atividade");
+  console.log("3 - Buscar uma atividade");
+  console.log("4 - Alterar uma atividade");
+  console.log("5 - Remover uma atividade");
+  console.log("=======================");
+  
+  }
+>>>>>>> a82096c (PR-07: Menu feito)
 
 //PR - 07: Criar menu com as opções descritas acima e estrutura do switch de acordo com o menu
 //}
