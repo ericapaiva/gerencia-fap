@@ -32,7 +32,7 @@ const tarefa2 = {
 console.log(tarefa1.status);
 
 const tarefa = [tarefa1, tarefa2];
-//let loop = true;
+let loop = true;
 let busca; // alteração para deletar depois
 
 //PR - 02: Criar método para crud: listar todas as atividades
@@ -41,10 +41,10 @@ let busca; // alteração para deletar depois
 //PR - 05: Criar método para crud: alterar atividades
 //PR - 06: Criar método para crud: remover atividades
 
-//while (true) {
-console.log("minha branch 07");
+while (true) {
+  console.log("minha branch 07");
 
-//PR - 07: Criar menu com as opções descritas acima e estrutura do switch de acordo com o menu
-//}
+  //PR - 07: Criar menu com as opções descritas acima e estrutura do switch de acordo com o menu
+}
 
 //PR - 08: Criar um arquivo README.md legal com a apresentação do projeto
