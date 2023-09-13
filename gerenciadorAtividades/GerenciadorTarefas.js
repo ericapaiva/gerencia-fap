@@ -78,7 +78,7 @@ class GerenciadorTarefas extends Tarefa {
   listarTarefas() {}
   buscarTarefas() {}
 
-  atualizarTarefa() {
+  atualizarTarefas() {
     const tarefaAtualizar = this.buscaPorId();
 
     tarefaAtualizar.setDescricao = input.question(
@@ -98,7 +98,7 @@ class GerenciadorTarefas extends Tarefa {
     );
   }
 
-  removerTarefa() {
+  removerTarefas() {
     const tarefaRemover = this.buscaPorId();
     tarefasList.splice(tarefaRemover, 1);
     console.log(tarefasList);
@@ -108,10 +108,10 @@ class GerenciadorTarefas extends Tarefa {
   }
 }
 
-const tarefa = new GerenciadorTarefas();
+//const tarefa = new GerenciadorTarefas();
 
-tarefa.cadastrarTarefas();
-tarefa.toString();
+//tarefa.cadastrarTarefas();
+//tarefa.toString();
 //tarefa.removerTarefa();
 //tarefa.atualizarTarefa();
 
