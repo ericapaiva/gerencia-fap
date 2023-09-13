@@ -33,7 +33,7 @@ console.log(tarefa1.status);
 
 const tarefa = [tarefa1, tarefa2];
 //let loop = true;
-let busca; // alteração para deletar depois
+
 let busca; // alteração para deletar depois
 
 //PR - 02: Criar método para crud: listar todas as atividades
