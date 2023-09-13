@@ -9,10 +9,6 @@ class Tarefa {
     return this._titulo;
   }
 
-  set setTitulo(titulo) {
-    this._titulo = titulo;
-  }
-
   get getDescricao() {
     return this._descricao;
   }

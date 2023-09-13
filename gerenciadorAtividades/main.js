@@ -1,5 +1,7 @@
 const GerenciadorTarefa = require("./GerenciadorTarefas.js");
 
+const gerenciador = new GerenciadorTarefa();
+
 while (true) {
   console.log("=== GERENCIADOR DE TAREFAS ===");
   console.log("=========MENU========");

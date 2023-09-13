@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "clear": "^0.1.0",
+    "esm": "^3.2.25",
     "readline-sync": "^1.4.10"
   }
 }
