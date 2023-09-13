@@ -1,11 +1,15 @@
-const Tarefa = require("./projetos-fap/gerencia-fap/gerenciadorAtividades/Tarefa.js");
+const Tarefa = require("./Tarefa.js");
+
+statusEnum = {
+  INICIAR: "iniciar",
+  ANDAMENTO: "andamento",
+  CONCLUIDA: "concluida",
+};
 
 class GerenciadorTarefas extends Tarefa {
-  statusEnum = {
-    INICIAR: "iniciar",
-    ANDAMENTO: "andamento",
-    CONCLUIDA: "concluida",
-  };
+  constructor() {
+    
+  }
 
   constructor(idTarefa, titulo, descricao, dataDeEntrega, statusEnum) {
     super(titulo, descricao, dataDeEntrega);
@@ -24,6 +28,42 @@ class GerenciadorTarefas extends Tarefa {
   set setStatusEnum(statusEnum) {
     this._statusEnum = statusEnum;
   }
+
+  cadastrarTarefas(){
+
+  }
+  listarTarefas() {
+
+  }
+  buscarTarefas(){
+
+  }
+  alterarTarefa() {
+
+  }
+  removerTarefa() {
+    
+  }
+  
 }
+
+const tarefa1 = new GerenciadorTarefas(
+  1,
+  "tarefa 1",
+  "criar menu do crud",
+  new Date("2023, 09, 15"),
+  statusEnum.INICIAR
+);
+
+const tarefa2 = new GerenciadorTarefas(
+  2,
+  "tarefa 2",
+  "criar classes do crud",
+  new Date("2023, 09, 17"),
+  statusEnum.ANDAMENTO
+);
+
+console.log(tarefa1.getTitulo);
+console.log(tarefa2.getTitulo);
 
 module.exports = GerenciadorTarefas;
