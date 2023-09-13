@@ -11,9 +11,11 @@ statusEnum = {
 const tarefasList = [];
 
 class GerenciadorTarefas extends Tarefa {
+  static _idTarefa = 0;
+
   constructor(titulo, descricao, dataDeEntrega) {
     super(titulo, descricao, dataDeEntrega);
-    this._idTarefa = 0;
+    this._idTarefa = GerenciadorTarefas._idTarefa++;
     this._statusEnum = statusEnum.INICIAR;
   }
 
@@ -27,10 +29,6 @@ class GerenciadorTarefas extends Tarefa {
 
   set setStatusEnum(statusEnum) {
     this._statusEnum = statusEnum;
-  }
-
-  incrementarId() {
-    this._idTarefa++;
   }
 
   buscaPorId() {
@@ -47,10 +45,10 @@ class GerenciadorTarefas extends Tarefa {
   }
 
   toString() {
-    const tarefa = this.buscaPorId();
-    const dia = tarefa.getDataDeEntrega.getDate();
-    const mes = tarefa.getDataDeEntrega.getMonth();
-    const ano = tarefa.getDataDeEntrega.getFullYear();
+    //Não funciona
+    const dia = this.getDataDeEntrega.getDate();
+    const mes = this.getDataDeEntrega.getMonth();
+    const ano = this.getDataDeEntrega.getFullYear();
     return console.log(
       `======== TAREFA ${tarefa.getIdTarefa} ======== 
        Codigo: ${tarefa.getIdTarefa}
@@ -68,11 +66,11 @@ class GerenciadorTarefas extends Tarefa {
     let dataDeEntrega = new Date(input.question("Digite a data de entrega: "));
 
     const tarefa = new GerenciadorTarefas(titulo, descricao, dataDeEntrega);
-    tarefa.incrementarId();
 
     tarefasList.push(tarefa);
 
     console.log(`A tarefa: ${tarefa.getTitulo} foi cadastrada com sucesso!`);
+    console.log(tarefasList);
   }
 
   listarTarefas() {}
@@ -91,7 +89,9 @@ class GerenciadorTarefas extends Tarefa {
       "Atualize o status: (andamento ou concluida): "
     );
 
-    this.toString();
+    //this.toString();
+
+    console.log(tarefaAtualizar);
 
     console.log(
       `A tarefa: ${tarefaAtualizar.getTitulo} foi atualizada com sucesso!`

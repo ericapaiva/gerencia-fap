@@ -2,9 +2,11 @@ const input = require("readline-sync");
 
 const GerenciadorTarefa = require("./GerenciadorTarefas.js");
 
+let loop = true;
+
 const gerenciador = new GerenciadorTarefa();
 
-while (true) {
+while (loop) {
   console.log("=== GERENCIADOR DE TAREFAS ===");
   console.log("=========MENU========");
   console.log("0 - Sair do sistema");
@@ -14,7 +16,7 @@ while (true) {
   console.log("4 - Alterar uma atividade");
   console.log("5 - Remover uma atividade");
   console.log("=======================");
-  let opcao = input.questionInt("Escolha uma opção: ");
+  let opcao = input.questionInt("Escolha uma opcao: ");
 
   switch (opcao) {
     case 1:
