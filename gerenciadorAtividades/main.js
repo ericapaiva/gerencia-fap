@@ -34,6 +34,7 @@ console.log(tarefa1.status);
 const tarefa = [tarefa1, tarefa2];
 //let loop = true;
 let busca; // alteração para deletar depois
+let busca; // alteração para deletar depois
 
 //PR - 02: Criar método para crud: listar todas as atividades
 //PR - 03: Criar método para crud: cadastrar todas as atividades
@@ -41,9 +42,6 @@ let busca; // alteração para deletar depois
 //PR - 05: Criar método para crud: alterar atividades
 //PR - 06: Criar método para crud: remover atividades
 
-<<<<<<< HEAD
-//while (true) {
-=======
 //PR - 07: Criar menu com as opções descritas acima e estrutura do switch de acordo com o menu
 while (true) {
   console.log("=== GERENCIADOR DE TAREFAS ===");
@@ -57,9 +55,5 @@ while (true) {
   console.log("=======================");
   
   }
->>>>>>> a82096c (PR-07: Menu feito)
-
-//PR - 07: Criar menu com as opções descritas acima e estrutura do switch de acordo com o menu
-//}
 
 //PR - 08: Criar um arquivo README.md legal com a apresentação do projeto
