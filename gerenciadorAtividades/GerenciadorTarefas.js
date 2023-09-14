@@ -55,8 +55,7 @@ class GerenciadorTarefas extends Tarefa {
        Titulo: ${tarefa.getTitulo} 
        Descricao: ${tarefa.getDescricao}
        Data de entrega: ${dia}/${mes}/${ano}
-       Status: ${tarefa.getStatusEnum}
-       `
+       Status: ${tarefa.getStatusEnum}`
     );
   }
 
@@ -73,8 +72,44 @@ class GerenciadorTarefas extends Tarefa {
     console.log(tarefasList);
   }
 
-  listarTarefas() {}
-  buscarTarefas() {}
+  listarTarefas() {
+    console.log("Lista de Tarefas:");
+
+    for (const tarefa of tarefasList) {
+      console.log(
+        `======== TAREFA ${tarefa.getIdTarefa} ======== 
+        - Título: ${tarefa.getTitulo}
+        - Descrição: ${tarefa.getDescricao}
+        - Data de Entrega: ${tarefa.getDataDeEntrega.toLocaleDateString()}
+        - Status: ${tarefa.getStatusEnum}
+        ==========================`
+      );
+    }
+  }
+
+  buscarTarefas() {
+    const buscarId = input.questionInt("Digite o codigo da tarefa: ");
+    let tarefaEncontrada = null;
+
+    for (const tarefa of tarefasList) {
+      if (tarefa.getIdTarefa === buscarId) {
+        tarefaEncontrada = tarefa;
+
+        console.log(
+          `Tarefa Encontrada:
+          - Título: ${tarefaEncontrada.getTitulo}
+          - Descrição: ${tarefaEncontrada.getDescricao}
+          - Data de Entrega: ${tarefaEncontrada.getDataDeEntrega.toLocaleDateString}
+          - Status: ${tarefaEncontrada.getStatusEnum}`
+        );
+        break;
+      } else {
+        throw console.error(
+          "CÓDIGO INEXISTENTE, POR FAVOR DIGITE UM CÓDIGO VÁLIDO!!"
+        );
+      }
+    }
+  }
 
   atualizarTarefas() {
     const tarefaAtualizar = this.buscaPorId();
