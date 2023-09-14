@@ -1,10 +1,12 @@
-const input = require("readline-sync");
+// const input = require("readline-sync");
+import input from "readline-sync";
 
-const GerenciadorTarefa = require("./GerenciadorTarefas.js");
+// const GerenciadorTarefa = require("./GerenciadorTarefas");
+import GerenciadorTarefas from "./gerenciadorTarefas.js";
 
 let loop = true;
 
-const gerenciador = new GerenciadorTarefa();
+const gerenciador = new GerenciadorTarefas();
 
 while (loop) {
   console.log();
@@ -26,11 +28,11 @@ while (loop) {
       gerenciador.listarTarefas();
       break;
     case 2:
-      op = null;
+      let op = 0;
       do {
         console.log();
         gerenciador.cadastrarTarefas();
-        op = input.question(
+        op = input.questionInt(
           "Deseja realizar outro cadastro (1 - SIM / 2 - NAO): "
         );
       } while (op === 1);
