@@ -43,6 +43,7 @@ while (loop) {
       console.log("saindo do sistema");
       loop = false;
       break;
+      
     default:
       console.log("opção invalida");
       break;
