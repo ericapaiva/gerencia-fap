@@ -3,7 +3,7 @@ const input = require("readline-sync");
 const Tarefa = require("./Tarefa.js");
 
 statusEnum = {
-  INICIAR: "iniciar",
+  INICIAR: "iniciando",
   ANDAMENTO: "andamento",
   CONCLUIDA: "concluida",
 };
@@ -34,29 +34,12 @@ class GerenciadorTarefas extends Tarefa {
   buscaPorId() {
     const buscarId = input.questionInt("Digite o codigo da tarefa: ");
     for (const t of tarefasList) {
-      if (t._idTarefa === buscarId) {
+      if (t.getIdTarefa === buscarId) {
         return t;
-      } else {
-        throw console.error(
-          "CODIGO INEXISTENTE, POR FAVOR DIGITE UM CODIGO VALIDO!!"
-        );
       }
+      break;
     }
-  }
-
-  toString() {
-    //Não funciona
-    const dia = this.getDataDeEntrega.getDate();
-    const mes = this.getDataDeEntrega.getMonth();
-    const ano = this.getDataDeEntrega.getFullYear();
-    return console.log(
-      `======== TAREFA ${tarefa.getIdTarefa} ======== 
-       Codigo: ${tarefa.getIdTarefa}
-       Titulo: ${tarefa.getTitulo} 
-       Descricao: ${tarefa.getDescricao}
-       Data de entrega: ${dia}/${mes}/${ano}
-       Status: ${tarefa.getStatusEnum}`
-    );
+    // console.log("CODIGO INEXISTENTE, POR FAVOR DIGITE UM CODIGO VALIDO!!");
   }
 
   cadastrarTarefas() {
@@ -68,8 +51,12 @@ class GerenciadorTarefas extends Tarefa {
 
     tarefasList.push(tarefa);
 
-    console.log(`A tarefa: ${tarefa.getTitulo} foi cadastrada com sucesso!`);
-    console.log(tarefasList);
+    console.log();
+    console.log(
+      `
+    ========= A tarefa: ${tarefa.getTitulo} foi cadastrada com sucesso! =========
+    `
+    );
   }
 
   listarTarefas() {
@@ -81,8 +68,7 @@ class GerenciadorTarefas extends Tarefa {
         - Título: ${tarefa.getTitulo}
         - Descrição: ${tarefa.getDescricao}
         - Data de Entrega: ${tarefa.getDataDeEntrega.toLocaleDateString()}
-        - Status: ${tarefa.getStatusEnum}
-        ==========================`
+        - Status: ${tarefa.getStatusEnum}`
       );
     }
   }
@@ -103,11 +89,8 @@ class GerenciadorTarefas extends Tarefa {
           - Status: ${tarefaEncontrada.getStatusEnum}`
         );
         break;
-      } else {
-        throw console.error(
-          "CÓDIGO INEXISTENTE, POR FAVOR DIGITE UM CÓDIGO VÁLIDO!!"
-        );
       }
+      //console.log("CÓDIGO INEXISTENTE, POR FAVOR DIGITE UM CÓDIGO VÁLIDO!!");
     }
   }
 
@@ -123,29 +106,33 @@ class GerenciadorTarefas extends Tarefa {
     tarefaAtualizar.setStatusEnum = input.question(
       "Atualize o status: (andamento ou concluida): "
     );
-
-    //this.toString();
-
-    console.log(tarefaAtualizar);
-
+    console.log();
     console.log(
-      `A tarefa: ${tarefaAtualizar.getTitulo} foi atualizada com sucesso!`
+      `
+      ======== A tarefa: ${tarefaAtualizar.getTitulo} foi atualizada com sucesso! ========
+       `
     );
   }
 
   removerTarefas() {
     const tarefaRemover = this.buscaPorId();
+
     tarefasList.splice(tarefaRemover, 1);
-    console.log(tarefasList);
+    console.log();
     console.log(
-      `A tarefa: ${tarefaRemover.getTitulo} foi deletada com sucesso!`
+      //`==============================================
+      //A tarefa: ${tarefaRemover.getTitulo} foi deletada com sucesso!
+      //================================================`
+      `
+    ======== A tarefa: foi deletada com sucesso! ========
+   `
     );
   }
 }
 
 //const tarefa = new GerenciadorTarefas();
 
-//tarefa.cadastrarTarefas();
+//tarefa.cadastrarTarefas
 //tarefa.toString();
 //tarefa.removerTarefa();
 //tarefa.atualizarTarefa();
