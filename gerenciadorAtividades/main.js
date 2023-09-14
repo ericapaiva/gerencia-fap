@@ -1,7 +1,5 @@
-// const input = require("readline-sync");
 import input from "readline-sync";
 
-// const GerenciadorTarefa = require("./GerenciadorTarefas");
 import GerenciadorTarefas from "./gerenciadorTarefas.js";
 
 let loop = true;
