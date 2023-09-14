@@ -1,8 +1,10 @@
-const input = require("readline-sync");
+//const input = require("readline-sync");
+import input from "readline-sync";
 
-const Tarefa = require("./Tarefa.js");
+//const Tarefa = require("./Tarefa.js");
+import Tarefa from "./Tarefa.js";
 
-statusEnum = {
+const statusEnum = {
   INICIAR: "iniciando",
   ANDAMENTO: "andamento",
   CONCLUIDA: "concluida",
@@ -10,7 +12,7 @@ statusEnum = {
 
 const tarefasList = [];
 
-class GerenciadorTarefas extends Tarefa {
+export default class GerenciadorTarefas extends Tarefa {
   static _idTarefa = 0;
 
   constructor(titulo, descricao, dataDeEntrega) {
@@ -85,7 +87,7 @@ class GerenciadorTarefas extends Tarefa {
           `Tarefa Encontrada:
           - Título: ${tarefaEncontrada.getTitulo}
           - Descrição: ${tarefaEncontrada.getDescricao}
-          - Data de Entrega: ${tarefaEncontrada.getDataDeEntrega.toLocaleDateString}
+          - Data de Entrega: ${tarefaEncontrada.getDataDeEntrega.toLocaleDateString()}
           - Status: ${tarefaEncontrada.getStatusEnum}`
         );
         break;
@@ -106,7 +108,11 @@ class GerenciadorTarefas extends Tarefa {
     tarefaAtualizar.setStatusEnum = input.question(
       "Atualize o status: (andamento ou concluida): "
     );
-    console.log();
+
+    // console.log(tarefaAtualizar.getDescricao);
+    // tarefaAtualizar.setDescricao = "teste";
+    // console.log(tarefaAtualizar.getDescricao);
+
     console.log(
       `
       ======== A tarefa: ${tarefaAtualizar.getTitulo} foi atualizada com sucesso! ========
@@ -117,7 +123,7 @@ class GerenciadorTarefas extends Tarefa {
   removerTarefas() {
     const tarefaRemover = this.buscaPorId();
 
-    tarefasList.splice(tarefaRemover, 1);
+    tarefasList.splice(tarefasList.indexOf(tarefaRemover), 1);
     console.log();
     console.log(
       //`==============================================
@@ -132,9 +138,10 @@ class GerenciadorTarefas extends Tarefa {
 
 //const tarefa = new GerenciadorTarefas();
 
-//tarefa.cadastrarTarefas
+//tarefa.cadastrarTarefas();
 //tarefa.toString();
 //tarefa.removerTarefa();
-//tarefa.atualizarTarefa();
+//tarefa.atualizarTarefas();
 
-module.exports = GerenciadorTarefas;
+//module.exports = GerenciadorTarefas;
+export { GerenciadorTarefas };
