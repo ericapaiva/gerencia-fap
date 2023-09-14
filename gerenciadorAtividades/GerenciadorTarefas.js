@@ -1,7 +1,5 @@
-//const input = require("readline-sync");
 import input from "readline-sync";
 
-//const Tarefa = require("./Tarefa.js");
 import Tarefa from "./Tarefa.js";
 
 const statusEnum = {
@@ -38,16 +36,33 @@ export default class GerenciadorTarefas extends Tarefa {
     for (const t of tarefasList) {
       if (t.getIdTarefa === buscarId) {
         return t;
+        break;
+      } else {
+        throw console.error(
+          "CODIGO INEXISTENTE, POR FAVOR DIGITE UM CODIGO VALIDO!!"
+        );
       }
-      break;
     }
-    // console.log("CODIGO INEXISTENTE, POR FAVOR DIGITE UM CODIGO VALIDO!!");
+  }
+
+  manipularData() {
+    const data = input.question("Digite a data de entrega (dd/mm/aaaa): ");
+
+    const dataDividida = data.split("/");
+
+    const dia = parseInt(dataDividida[0]);
+    const mes = parseInt(dataDividida[1]) - 1;
+    const ano = parseInt(dataDividida[2]);
+
+    this._dataDeEntrega = new Date(ano, mes, dia);
+
+    return this._dataDeEntrega;
   }
 
   cadastrarTarefas() {
     let titulo = input.question("Informe o titulo da sua tarefa: ");
     let descricao = input.question("Qual a descricao dela? ");
-    let dataDeEntrega = new Date(input.question("Digite a data de entrega: "));
+    let dataDeEntrega = this.manipularData();
 
     const tarefa = new GerenciadorTarefas(titulo, descricao, dataDeEntrega);
 
@@ -92,7 +107,6 @@ export default class GerenciadorTarefas extends Tarefa {
         );
         break;
       }
-      //console.log("CÓDIGO INEXISTENTE, POR FAVOR DIGITE UM CÓDIGO VÁLIDO!!");
     }
   }
 
@@ -102,16 +116,12 @@ export default class GerenciadorTarefas extends Tarefa {
     tarefaAtualizar.setDescricao = input.question(
       "Digite a descricao atualizada: "
     );
-    tarefaAtualizar.setDataDeEntrega = new Date(
-      input.question("Digite a data de entrega atualizada: ")
-    );
+
+    tarefaAtualizar.setDataDeEntrega = this.manipularData();
+
     tarefaAtualizar.setStatusEnum = input.question(
       "Atualize o status: (andamento ou concluida): "
     );
-
-    // console.log(tarefaAtualizar.getDescricao);
-    // tarefaAtualizar.setDescricao = "teste";
-    // console.log(tarefaAtualizar.getDescricao);
 
     console.log(
       `
@@ -126,22 +136,11 @@ export default class GerenciadorTarefas extends Tarefa {
     tarefasList.splice(tarefasList.indexOf(tarefaRemover), 1);
     console.log();
     console.log(
-      //`==============================================
-      //A tarefa: ${tarefaRemover.getTitulo} foi deletada com sucesso!
-      //================================================`
-      `
-    ======== A tarefa: foi deletada com sucesso! ========
-   `
+      `==============================================
+      A tarefa: ${tarefaRemover.getTitulo} foi deletada com sucesso!
+      ================================================`
     );
   }
 }
 
-//const tarefa = new GerenciadorTarefas();
-
-//tarefa.cadastrarTarefas();
-//tarefa.toString();
-//tarefa.removerTarefa();
-//tarefa.atualizarTarefas();
-
-//module.exports = GerenciadorTarefas;
 export { GerenciadorTarefas };
