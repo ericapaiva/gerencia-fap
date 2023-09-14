@@ -1,4 +1,4 @@
-class Tarefa {
+export default class Tarefa {
   constructor(titulo, descricao, dataDeEntrega) {
     this._titulo = titulo;
     this._descricao = descricao;
@@ -28,4 +28,5 @@ class Tarefa {
   criarTarefa() {}
 }
 
-module.exports = Tarefa;
+//module.exports = Tarefa;
+export { Tarefa };
