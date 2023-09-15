@@ -3,7 +3,7 @@ import input from "readline-sync";
 import Tarefa from "./Tarefa.js";
 
 const statusEnum = {
-  INICIAR: "iniciando",
+  INICIAR: "iniciada",
   ANDAMENTO: "andamento",
   CONCLUIDA: "concluida",
 };
@@ -33,16 +33,13 @@ export default class GerenciadorTarefas extends Tarefa {
 
   buscaPorId() {
     const buscarId = input.questionInt("Digite o codigo da tarefa: ");
+
     for (const t of tarefasList) {
-      if (t.getIdTarefa === buscarId) {
+      if (t.getIdTarefa == buscarId) {
         return t;
-        break;
-      } else {
-        throw console.error(
-          "CODIGO INEXISTENTE, POR FAVOR DIGITE UM CODIGO VALIDO!!"
-        );
       }
     }
+    console.log("CODIGO INEXISTENTE, POR FAVOR DIGITE UM CODIGO VALIDO!!");
   }
 
   manipularData() {
@@ -110,6 +107,30 @@ export default class GerenciadorTarefas extends Tarefa {
     }
   }
 
+  ListarPorStatus() {
+    const status = input.question(
+      "Entre com o status que voce deseja buscar: "
+    );
+
+    let objetoTarefa = null;
+
+    for (const tarefa of tarefasList) {
+      if (tarefa.getStatusEnum == status) {
+        console.log(
+          `Tarefa Encontrada:
+          - Título: ${tarefa.getTitulo}
+          - Descrição: ${tarefa.getDescricao}
+          - Data de Entrega: ${tarefa.getDataDeEntrega.toLocaleDateString()}
+          `
+        );
+        objetoTarefa = tarefa;
+      }
+    }
+    if (objetoTarefa === null) {
+      throw console.error("STATUS INVÁLIDO OU INEXISTENTE!!");
+    }
+  }
+
   atualizarTarefas() {
     const tarefaAtualizar = this.buscaPorId();
 
@@ -129,7 +150,6 @@ export default class GerenciadorTarefas extends Tarefa {
        `
     );
   }
-
   removerTarefas() {
     const tarefaRemover = this.buscaPorId();
 
