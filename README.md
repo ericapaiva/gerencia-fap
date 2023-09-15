@@ -4,7 +4,7 @@ Tudo bem com vocês? Acredito que agora ficará ainda melhor, aqui trouxemos uma
 Sabemos que nossos dias são uma eterna correria, e para que você não se "enrrole" no meio dessa montanha de atividades, desenvolvemos o GerenciaFAP, que será responsável por organizar todas as suas atividades sem que você precise se preocupar com tal. Não é incrível? 🤩
 
 ## Tecnologias Utilizadas: 
-</div>
+</div align="middle">
 
 <img align="middle" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="60" height="60" /> 
 <img align="middle" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original-wordmark.svg" width="60" height="60"/>
