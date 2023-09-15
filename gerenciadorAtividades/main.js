@@ -16,6 +16,7 @@ while (loop) {
   console.log("3 - Buscar uma atividade");
   console.log("4 - Alterar uma atividade");
   console.log("5 - Remover uma atividade");
+  console.log("6 - Listar atividades por status");
   console.log("=============================");
   let opcao = input.questionInt("Escolha uma opcao: ");
   console.log("=============================");
@@ -23,8 +24,10 @@ while (loop) {
   switch (opcao) {
     case 1:
       console.log();
+      console.log("====== LISTAR ======");
       gerenciador.listarTarefas();
       break;
+      console.log("=====================");
     case 2:
       let op = 0;
       do {
@@ -49,6 +52,11 @@ while (loop) {
     case 5:
       console.log();
       gerenciador.removerTarefas();
+      break;
+
+    case 6:
+      console.log();
+      gerenciador.ListarPorStatus();
       break;
 
     case 0:
