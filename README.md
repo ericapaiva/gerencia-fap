@@ -20,32 +20,3 @@ CRUD implementado conforme alguns pilares do paradígma de programação orienta
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-000?style=for-the-badge&logo=linkedin&logoColor=0E76A8)](https://www.linkedin.com/in/dani-xavier/)
 * Erica --->
  [![LinkedIn](https://img.shields.io/badge/LinkedIn-000?style=for-the-badge&logo=linkedin&logoColor=0E76A8)](https://www.linkedin.com/in/ericaribeirolira/)
-
-<table>
-  <tr>
-    <td align="center">
-      <a href="#">
-        <img[![LinkedIn] src"(https://img.shields.io/badge/LinkedIn-000?style=for-the-badge&logo=linkedin&logoColor=0E76A8)"](https://www.linkedin.com/in/barbaraleimig/)>
-        <sub>
-          <b>Bárbara Leimig</b>
-        </sub>
-      </a>
-    </td>
-    <td align="center">
-      <a href="#">
-        [![LinkedIn](https://img.shields.io/badge/LinkedIn-000?style=for-the-badge&logo=linkedin&logoColor=0E76A8)](https://www.linkedin.com/in/dani-xavier/)
-        <sub>
-          <b>Daniela Xavier</b>
-        </sub>
-      </a>
-    </td>
-    <td align="center">
-      <a href="#">
-        [![LinkedIn](https://img.shields.io/badge/LinkedIn-000?style=for-the-badge&logo=linkedin&logoColor=0E76A8)](https://www.linkedin.com/in/ericaribeirolira/)
-        <sub>
-          <b>Erica</b>
-        </sub>
-      </a>
-    </td>
-  </tr>
-</table>
