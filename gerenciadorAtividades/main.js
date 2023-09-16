@@ -23,53 +23,47 @@ while (loop) {
 
   switch (opcao) {
     case 1:
-      console.log("\n=============== LISTAR ================");
       gerenciador.listarTarefas();
-      console.log("=========================================");
       readline.keyInPause();
+      console.clear();
       break;
 
     case 2:
       let op = 0;
       do {
-        console.log("\n================ CADASTRAR ==================");
-        console.log();
         gerenciador.cadastrarTarefas();
-        console.log("===============================================");
         op = input.questionInt(
           "Deseja realizar outro cadastro (1 - SIM / 2 - NAO): "
         );
         console.clear();
       } while (op === 1);
       readline.keyInPause();
+      console.clear();
       break;
 
     case 3:
-      console.log("\n================ BUSCAR ==================");
       gerenciador.buscarTarefas();
-      console.log("============================================");
       readline.keyInPause();
+      console.clear();
       break;
 
     case 4:
-      console.log("\n================== ALTERAR ===================");
       gerenciador.atualizarTarefas();
-      console.log("================================================");
+
       readline.keyInPause();
+      console.clear();
       break;
 
     case 5:
-      console.log("\n=================== REMOVER ====================");
       gerenciador.removerTarefas();
-      console.log("==================================================");
       readline.keyInPause();
+      console.clear();
       break;
 
     case 6:
-      console.log("\n============ LISTA DE TAREFAS =============");
       gerenciador.ListarPorStatus();
-      console.log("=============================================");
       readline.keyInPause();
+      console.clear();
       break;
 
     case 0:
@@ -83,6 +77,7 @@ while (loop) {
       console.log();
       console.log("Opcao invalida!");
       readline.keyInPause();
+      console.clear();
       break;
   }
 }
