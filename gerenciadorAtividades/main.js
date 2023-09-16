@@ -77,7 +77,6 @@ while (loop) {
       console.log("\nSaindo do sistema");
       console.log("=========================================");
       loop = false;
-      readline.keyInPause();
       break;
 
     default:

@@ -31,17 +31,6 @@ export default class GerenciadorTarefas extends Tarefa {
     this._statusEnum = statusEnum;
   }
 
-  buscaPorId() {
-    const buscarId = input.questionInt("Digite o codigo da tarefa: ");
-
-    for (const t of tarefasList) {
-      if (t.getIdTarefa == buscarId) {
-        return t;
-      }
-    }
-    console.log("CODIGO INEXISTENTE, POR FAVOR DIGITE UM CODIGO VALIDO!!");
-  }
-
   manipularData() {
     const data = input.question("Digite a data de entrega (dd/mm/aaaa): ");
 
@@ -56,6 +45,17 @@ export default class GerenciadorTarefas extends Tarefa {
     return this._dataDeEntrega;
   }
 
+  buscaPorId() {
+    const buscarId = input.questionInt("Digite o codigo da tarefa: ");
+
+    for (const t of tarefasList) {
+      if (t.getIdTarefa == buscarId) {
+        return t;
+      }
+    }
+    console.log("\nCODIGO INEXISTENTE, POR FAVOR DIGITE UM CODIGO VALIDO!!");
+  }
+
   cadastrarTarefas() {
     let titulo = input.question("Informe o titulo da sua tarefa: ");
     let descricao = input.question("Qual a descricao dela? ");
@@ -66,9 +66,7 @@ export default class GerenciadorTarefas extends Tarefa {
     tarefasList.push(tarefa);
 
     console.log();
-    console.log(
-      `========= A tarefa: ${tarefa.getTitulo} foi cadastrada com sucesso! =========`
-    );
+    console.log(`\nA tarefa: ${tarefa.getTitulo} foi cadastrada com sucesso!`);
   }
 
   listarTarefas() {
@@ -85,10 +83,12 @@ export default class GerenciadorTarefas extends Tarefa {
 
   buscarTarefas() {
     let tarefaEncontrada = this.buscaPorId();
+    console.clear();
 
     if (tarefaEncontrada) {
       console.log(
         `Tarefa Encontrada:
+            - ID: ${tarefaEncontrada.getIdTarefa}
             - Título: ${tarefaEncontrada.getTitulo}
             - Descrição: ${tarefaEncontrada.getDescricao}
             - Data de Entrega: ${tarefaEncontrada.getDataDeEntrega.toLocaleDateString()}
@@ -117,7 +117,7 @@ export default class GerenciadorTarefas extends Tarefa {
       }
     }
     if (objetoTarefa === null) {
-      throw console.error("STATUS INVÁLIDO OU INEXISTENTE!!");
+      throw console.error("\nSTATUS INVÁLIDO OU INEXISTENTE!!");
     }
   }
 
@@ -135,7 +135,7 @@ export default class GerenciadorTarefas extends Tarefa {
     );
 
     console.log(
-      ` A tarefa: ${tarefaAtualizar.getTitulo} foi atualizada com sucesso!`
+      `\nA tarefa: ${tarefaAtualizar.getTitulo} foi atualizada com sucesso!`
     );
   }
   removerTarefas() {
@@ -144,9 +144,7 @@ export default class GerenciadorTarefas extends Tarefa {
     tarefasList.splice(tarefasList.indexOf(tarefaRemover), 1);
     console.log();
     console.log(
-      `==============================================
-      A tarefa: ${tarefaRemover.getTitulo} foi deletada com sucesso!
-      ================================================`
+      `\nA tarefa: ${tarefaRemover.getTitulo} foi deletada com sucesso!`
     );
   }
 }
