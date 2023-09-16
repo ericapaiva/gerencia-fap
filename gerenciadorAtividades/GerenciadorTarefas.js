@@ -67,18 +67,14 @@ export default class GerenciadorTarefas extends Tarefa {
 
     console.log();
     console.log(
-      `
-    ========= A tarefa: ${tarefa.getTitulo} foi cadastrada com sucesso! =========
-    `
+      `========= A tarefa: ${tarefa.getTitulo} foi cadastrada com sucesso! =========`
     );
   }
 
   listarTarefas() {
-    console.log("Lista de Tarefas:");
-
     for (const tarefa of tarefasList) {
       console.log(
-        `======== TAREFA ${tarefa.getIdTarefa} ======== 
+        `=============== TAREFA ${tarefa.getIdTarefa} ==============
         - Título: ${tarefa.getTitulo}
         - Descrição: ${tarefa.getDescricao}
         - Data de Entrega: ${tarefa.getDataDeEntrega.toLocaleDateString()}
@@ -88,22 +84,16 @@ export default class GerenciadorTarefas extends Tarefa {
   }
 
   buscarTarefas() {
-    const buscarId = input.questionInt("Digite o codigo da tarefa: ");
-    let tarefaEncontrada = null;
+    let tarefaEncontrada = this.buscaPorId();
 
-    for (const tarefa of tarefasList) {
-      if (tarefa.getIdTarefa === buscarId) {
-        tarefaEncontrada = tarefa;
-
-        console.log(
-          `Tarefa Encontrada:
-          - Título: ${tarefaEncontrada.getTitulo}
-          - Descrição: ${tarefaEncontrada.getDescricao}
-          - Data de Entrega: ${tarefaEncontrada.getDataDeEntrega.toLocaleDateString()}
-          - Status: ${tarefaEncontrada.getStatusEnum}`
-        );
-        break;
-      }
+    if (tarefaEncontrada) {
+      console.log(
+        `Tarefa Encontrada:
+            - Título: ${tarefaEncontrada.getTitulo}
+            - Descrição: ${tarefaEncontrada.getDescricao}
+            - Data de Entrega: ${tarefaEncontrada.getDataDeEntrega.toLocaleDateString()}
+            - Status: ${tarefaEncontrada.getStatusEnum}`
+      );
     }
   }
 
@@ -145,9 +135,7 @@ export default class GerenciadorTarefas extends Tarefa {
     );
 
     console.log(
-      `
-      ======== A tarefa: ${tarefaAtualizar.getTitulo} foi atualizada com sucesso! ========
-       `
+      ` A tarefa: ${tarefaAtualizar.getTitulo} foi atualizada com sucesso!`
     );
   }
   removerTarefas() {
