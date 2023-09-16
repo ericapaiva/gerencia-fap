@@ -25,7 +25,7 @@ CRUD implementado conforme alguns pilares do paradígma de programação orienta
   <tr>
     <td align="center">
       <a href="#">
-        [![LinkedIn](https://img.shields.io/badge/LinkedIn-000?style=for-the-badge&logo=linkedin&logoColor=0E76A8)](https://www.linkedin.com/in/barbaraleimig/)
+        <img[![LinkedIn] src"(https://img.shields.io/badge/LinkedIn-000?style=for-the-badge&logo=linkedin&logoColor=0E76A8)"](https://www.linkedin.com/in/barbaraleimig/)>
         <sub>
           <b>Bárbara Leimig</b>
         </sub>
