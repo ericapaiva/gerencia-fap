@@ -14,12 +14,9 @@ Sabemos que nossos dias são uma eterna correria, e para que você não se "enrr
 CRUD implementado conforme alguns pilares do paradígma de programação orientada a objetos (herança e encapsulamento).
 
 ## Colaboradores:
-<b>* Barbara Leimig</b><br>
+* Barbara Leimig ---> 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-000?style=for-the-badge&logo=linkedin&logoColor=0E76A8)](https://www.linkedin.com/in/barbaraleimig/)
-<b>* Daniela Xavie</b><br>
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-000?style=for-the-badge&logo=linkedin&logoColor=0E76A8)](https://www.linkedin.com/in/dani-xavier/)
-<b>* Erica</b><br>
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-000?style=for-the-badge&logo=linkedin&logoColor=0E76A8)](https://www.linkedin.com/in/ericaribeirolira/)
+
 * Daniela Xavier ---> 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-000?style=for-the-badge&logo=linkedin&logoColor=0E76A8)](https://www.linkedin.com/in/dani-xavier/)
 * Erica --->
