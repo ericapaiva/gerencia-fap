@@ -117,7 +117,7 @@ export default class GerenciadorTarefas extends Tarefa {
       }
     }
     if (objetoTarefa === null) {
-      throw console.error("STATUS INVÁLIDO OU INEXISTENTE!!");
+      console.log("STATUS INVÁLIDO OU INEXISTENTE!!");
     }
   }
 
